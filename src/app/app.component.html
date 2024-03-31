@@ -16,11 +16,11 @@
     </div>
     <div class="content-body">
       <p class="text block">¿Qué <strong>crédito te interesa</strong>?</p>
-      <div class="options">
+      <div class="options" [ngClass]="{'growp': validateClassCss('growp')}">
         <div
           class="option"
           [ngClass]="{
-            expanded: isExpanded,
+            'expanded': isExpanded,
             'basic-form': currentState === ViewState.BasicUserInfo
           }"
         >
@@ -39,7 +39,7 @@
             <div
               *ngIf="isExpanded && currentState === ViewState.CreditSelection"
               class="form_body-option"
-              [ngClass]="{ disappear: validateClassCss('disappear') }"
+              [ngClass]="{ 'disappear': validateClassCss('disappear') }"
             >
               <form>
                 <div class="output-value-range">
@@ -125,6 +125,7 @@
                     placeholder=" "
                     name="firstLastName"
                     [(ngModel)]="firstLastName"
+                    (ngModelChange)="firstLastName=$event.toUpperCase()"
                   />
                   <label for="apellido">Primer apellido</label>
                 </div>

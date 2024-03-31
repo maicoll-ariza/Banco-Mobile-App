@@ -16,7 +16,7 @@
 
 .header-img {
   width: 100%;
-  height: 300px;
+  height: 40vh;
   position: relative;
   background-image: url("../assets/images/header_copia.png");
   /* background-size: 100%; */
@@ -141,6 +141,9 @@ p[for='conditions'] {
   flex-direction: column;
   min-height: 612px;
 }
+.options.growp{
+  min-height: 720px;
+}
 
 .option {
   width: 320px;
@@ -161,7 +164,7 @@ p[for='conditions'] {
 }
 
 .option.basic-form {
-  animation: basicFormFrame 0.2s ease-out;
+  animation: basicFormFrame 0.5s ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -371,11 +374,11 @@ p[for='conditions'] {
 /* Animaciones */
 @keyframes headerImgFrame {
   0% {
-    top: -300px;
+    top:calc(60vh - 100vh);
   }
 
   77% {
-    top: -300px;
+    top:calc(60vh - 100vh);
   }
 
   100% {
@@ -595,20 +598,6 @@ p[for='conditions'] {
 }
 
 /* #region Slider */
-/* .slider-container {
-  position: relative;
-  width: 200px;
-}
-
-.slider {
-  width: 280px;
-  height: 16px !important;
-  border-radius: 8px;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-} */
-
-/* #region Slider */
 .slider-container {
   position: relative;
   width: 198px;
@@ -623,8 +612,6 @@ p[for='conditions'] {
   background: #e8eeff 0% 0% no-repeat padding-box;
   box-shadow: inset 0px 0px 10px #4676c32c;
   border-radius: 8px;
-  /* outline: none;
-  opacity: 0.7; */
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   margin-left: 3px;
@@ -641,14 +628,18 @@ p[for='conditions'] {
   background: transparent linear-gradient(180deg, #fafbff 0%, #ebf0ff 100%) 0% 0% no-repeat padding-box;
   /* Color de fondo del control deslizante */
   border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
 }
 
 .slider::-moz-range-thumb {
   width: 40px;
   /* Ancho del control deslizante */
   height: 40px;
+  background: transparent linear-gradient(180deg, #fafbff 0%, #ebf0ff 100%) 0% 0% no-repeat padding-box;
   /* Altura del control deslizante */
   cursor: pointer;
+  border: 2px solid #FFFFFF;
   border-radius: 50%;
 }
 
@@ -671,7 +662,7 @@ p[for='conditions'] {
   bottom: 140px !important;
   left: 20px !important;
   box-shadow: 0px 3px 6px #00DFFF40;
-  /* animation: formFrame 0.2s ease-out; */
+  animation: formFrame 0.5s ease-out;
 }
 
 .checkbox-custom:focus+.checkbox-custom-label,

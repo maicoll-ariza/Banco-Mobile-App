@@ -45,17 +45,20 @@ export class AppComponent {
    * Maneja el evento click para expandir la opción de crédito hipotecario.
    */
   onClickExpand(event: string): void {
+    this.classes =
+      this.isExpanded && this.currentState
+        ? []
+        : ['growp'];
     // Cambiar el valor de la propiedad isExpanded
     this.isExpanded = !this.isExpanded;
     this.currentState = ViewState.CreditSelection;
-    this.classes = [];
   }
 
   /**
    * Maneja el evento click para aceptar la configuración del crédito.
    */
   onClickAcceptCredit(): void {
-    this.classes.push('disappear');
+    this.classes = ['disappear'];
     setTimeout(() => {
       this.currentState = ViewState.BasicUserInfo;
     }, 200);
